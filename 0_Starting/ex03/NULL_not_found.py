@@ -7,14 +7,13 @@ def NULL_not_found(object: any) -> int:
 		str: "Empty",
 		bool: "Fake",
 	}
+	object_zero = object_dict.get(object_type)
 
 	if (object and object_type != float):
 		print("Type not found")
 		return (1)
+	if object_zero is None:
+		print(f"Nothing: {object} {object_type}")
 	else:
-		object_zero = object_dict.get(object_type)
-		if object_zero is None:
-			print(f"Nothing: {object} {object_type}")
-		else:
-			print(f"{object_zero}: {object} {object_type}")
-		return (0)
+		print(f"{object_zero}: {object} {object_type}")
+	return (0)
