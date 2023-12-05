@@ -2,29 +2,29 @@ import sys
 from ft_filter import ft_filter
 
 def main():
-	# Exception
 	if (len(sys.argv) < 3):
+		print("Usage : python filterstring.py <string> <integer>")
 		return (0)
 	try:
 		if (len(sys.argv) != 3):
 			raise AssertionError("AssertionError: more than two argument is provided")
-
-		# Code
+		try:
+			av = int(sys.argv[2])
+		except ValueError:
+			raise AssertionError("AssertionError: argument is not an integer")
 		ft_list = []
 		tmp = ""
 
 		for i in sys.argv[1]:
-			if (i == ' '):
-				ft_list += tmp
+			if (i.isspace()):
+				if (len(tmp) > av):
+					ft_list.append(tmp)
 				tmp = ""
 				continue
 			tmp += i
-
+		if (len(tmp) > av):
+			ft_list.append(tmp)
 		print(ft_list)
-		try:
-			print(int(sys.argv[2]))
-		except ValueError:
-			raise AssertionError("AssertionError: argument is not an integer")
 	except AssertionError as msg:
 		print(msg)
 		return (1)
