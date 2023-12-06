@@ -30,7 +30,8 @@ def main():
 			for j in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~":
 				if (i == j):
 					marks += 1
-	print(f"The text contains {char} characters:\n{upper} upper letters\n{lower} lower letters\n{marks} punctuation marks\n{spaces} spaces\n{digits} digits")
+	print(f"The text contains {char} characters:\n{upper} upper letters\n{lower} lower letters\n\
+{marks} punctuation marks\n{spaces} spaces\n{digits} digits")
 
 if __name__ == "__main__":
 	main()

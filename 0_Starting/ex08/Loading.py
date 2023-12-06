@@ -2,6 +2,7 @@ import sys
 import os
 
 def ft_tqdm(lst: range) -> None:
+	"""def ft_tqdm(lst: range) -> None:\nCopy the function tqdm with the yield operator"""
 	length = len(lst)								# Length of the argument
 	term_w = os.get_terminal_size(1).columns - 40	# Get size of terminal width
 
