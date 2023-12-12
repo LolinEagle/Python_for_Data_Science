@@ -15,11 +15,3 @@ def ft_load(path: str):
     img = cv2.imread(path)
     print(f"The shape of image is: {img.shape}")
     return (cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-
-
-def main():
-    print(ft_load("landscape.jpg"))
-
-
-if __name__ == "__main__":
-    main()
