@@ -1,7 +1,11 @@
 def give_bmi(height: list[int | float], weight: list[int | float]) \
         -> list[int | float]:
     """def give_bmi(height: list[int | float], weight: list[int | float])"""
+    if (type(height) is not list or type(height) is not list):
+        print("Arguments need to be a list")
+        return (0)
     if (len(height) != len(weight)):
+        print("Number of height are not equal to the number of weight")
         return (0)
     i = 0
     bmi = []
@@ -14,6 +18,9 @@ def give_bmi(height: list[int | float], weight: list[int | float]) \
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """def apply_limit(bmi: list[int | float], limit: int)"""
+    if (type(bmi) is not list):
+        print("First arguments need to be a list")
+        return (0)
     i = 0
     ft_list = []
 
