@@ -1,50 +1,42 @@
 class calculator:
     """class calculator"""
-    def __init__(self, data):
-        self.data = data
-
-    def __add__(self, object) -> None:
+    @staticmethod
+    def dotproduct(V1: list[float], V2: list[float]) -> None:
+        """def dotproduct(V1: list[float], V2: list[float])"""
+        V3 = 0
         i = 0
-        while (i < len(self.data)):
-            self.data[i] += object
+        while (i < len(V1) and i < len(V2)):
+            V3 += V1[i] * V2[i]
             i += 1
-        print(self.data)
+        print(f"Dot product is: {V3}")
 
-    def __mul__(self, object) -> None:
+    @staticmethod
+    def add_vec(V1: list[float], V2: list[float]) -> None:
+        """def add_vec(V1: list[float], V2: list[float])"""
+        V3 = []
         i = 0
-        while (i < len(self.data)):
-            self.data[i] *= object
+        while (i < len(V1) and i < len(V2)):
+            V3.append(float(V1[i] + V2[i]))
             i += 1
-        print(self.data)
+        print(f"Add Vector is : {V3}")
 
-    def __sub__(self, object) -> None:
+    @staticmethod
+    def sous_vec(V1: list[float], V2: list[float]) -> None:
+        """def sous_vec(V1: list[float], V2: list[float])"""
+        V3 = []
         i = 0
-        while (i < len(self.data)):
-            self.data[i] -= object
+        while (i < len(V1) and i < len(V2)):
+            V3.append(float(V1[i] - V2[i]))
             i += 1
-        print(self.data)
-
-    def __truediv__(self, object) -> None:
-        if (object == 0):
-            print("Error: Division by 0")
-            return
-        i = 0
-        while (i < len(self.data)):
-            self.data[i] /= object
-            i += 1
-        print(self.data)
+        print(f"Sous Vector is: {V3}")
 
 
 def main():
-    v1 = calculator([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
-    v1 + 5
-    print("---")
-    v2 = calculator([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
-    v2 * 5
-    print("---")
-    v3 = calculator([10.0, 15.0, 20.0])
-    v3 - 5
-    v3 / 5
+    a = [5, 10, 2]
+    b = [2, 4, 3]
+    calculator.dotproduct(a, b)
+    calculator.add_vec(a, b)
+    calculator.sous_vec(a, b)
 
 
 if __name__ == "__main__":

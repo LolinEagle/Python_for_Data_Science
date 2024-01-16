@@ -23,6 +23,7 @@ class Baratheon(Character):
 
 
 class Lannister(Character):
+    """class Lannister(Character)"""
     def __init__(self, first_name, is_alive=True, family_name="Lannister",
                  eyes="blue", hairs="light"):
         """def __init__(self, first_name, is_alive=True)"""
@@ -38,6 +39,7 @@ class Lannister(Character):
         return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
 
     def create_lannister(first_name, is_alive=True):
+        """def create_lannister(first_name, is_alive=True)"""
         return (Lannister(first_name, is_alive))
 
 
