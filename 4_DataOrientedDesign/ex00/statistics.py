@@ -1,37 +1,33 @@
+import numpy as np
+
+
 def ft_statistics(*args: int, **kwargs: str) -> None:
     """def ft_statistics(*args: int, **kwargs: str)"""
-    if (len(args) == 0):
-        print("ERROR no number founded")
-        return
     for key, value in kwargs.items():
-        # Mean
+        if (len(args) == 0):
+            print("ERROR")
+            continue
         if (value == "mean"):
-            print(f"Mean is {sum(args)/len(args)}")
-        # Median
+            print(f"Mean is {np.mean(args)}")
         elif (value == "median"):
-            data = sorted(args)
-            n = len(data)
-            if (n % 2 == 1):
-                print(f"Median is {data[n // 2]}")
-            else:
-                i = n // 2
-                print(f"Median is {(data[i - 1] + data[i]) / 2}")
-        # Quartile
+            print(f"Median is {np.median(args):.0f}")
         elif (value == "quartile"):
-        # Standard Deviation
+            quantile = np.quantile(args, [0.25, 0.75])
+            print(f"Quartile is [{quantile[0]}, {quantile[1]}]")
         elif (value == "std"):
-        # Variance
+            print(f"Standard Deviation is {np.std(args)}")
         elif (value == "var"):
+            print(f"Variance is {np.var(args)}")
 
 
 def main():
-    ft_statistics(1, 42, 360, 11, 64, toto="mean", tutu="median", tata="quartile")
+    ft_statistics(1, 42, 360, 11, 64, a="mean", b="median", c="quartile")
     print("-----")
-    ft_statistics(5, 75, 450, 18, 597, 27474, 48575, hello="std", world="var")
+    ft_statistics(5, 75, 450, 18, 597, 27474, 48575, a="std", b="var")
     print("-----")
-    ft_statistics(5, 75, 450, 18, 597, 27474, 48575, ejfhhe="heheh", ejdjdejn="kdekem")
+    ft_statistics(5, 75, 450, 18, 597, 27474, 48575, a="heheh", b="kdekem")
     print("-----")
-    ft_statistics(toto="mean", tutu="median", tata="quartile")
+    ft_statistics(a="mean", b="median", c="quartile")
 
 
 if __name__ == "__main__":
