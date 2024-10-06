@@ -10,3 +10,10 @@ The python programming language, is a high level object language that is often u
 [3 : OOP (Oriented Object Programming)](https://github.com/LolinEagle/Python_for_Data_Science/tree/main/3_OOP)
 
 [4 : Dod (Data Oriented Design)](https://github.com/LolinEagle/Python_for_Data_Science/tree/main/4_DataOrientedDesign)
+
+## Related project
+Here are some related projects
+
+[Piscine-Object](https://github.com/LolinEagle/Piscine-Object)
+
+[C++ Module](https://github.com/LolinEagle/CPP)
